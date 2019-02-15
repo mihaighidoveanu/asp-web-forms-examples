@@ -1,0 +1,16 @@
+
+********************************************
+https://social.msdn.microsoft.com/Forums/en-US/7eb22ec0-b566-4e32-bf4c-cd51f4fe1fa6/trying-to-find-aspnet-configuration-in-vs-community-2017?forum=visualstudiogeneral
+
+https://blogs.msdn.microsoft.com/webdev/2013/08/19/accessing-the-asp-net-web-configuration-tool-in-visual-studio-2013/
+
+To start Asp.net configuration tool,
+	run in cmd : 
+
+	iisexpress.exe /path:"C:\Windows\Microsoft.NET\Framework\v4.0.30319\ASP.NETWebAdminFiles" /vpath:"/ASP.NETWebAdminFiles" /port:8082 /clr:"4.0" /ntlm
+
+	go to url : 
+
+	http://localhost:8082/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=D:\Studs\DezAplWeb\[appName]&applicationUrl=/
+
+****************************************************

@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Master.master.cs" Inherits="Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" >
+        <h1>Search button</h1>
+        <asp:Panel runat="server" ID="ContainerSearch">
+            <asp:TextBox runat="server" ID="TextSearch" AutoCompleteType="Disabled" ValidationGroup="Search" ></asp:TextBox>
+            <asp:Button runat="server" ID="ButtonSearch" OnClick="ButtonSearch_Click" Text="Search" ValidationGroup="Search"></asp:Button>
+        </asp:Panel>   
+        <br />
+        <br />
+        <div>
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+        
+    </form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+    </div>
+    <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
+        <Items>
+            <asp:MenuItem Text="Birmaneza" Value="Birmaneza"></asp:MenuItem>
+            <asp:MenuItem Text="Persana" Value="Persana"></asp:MenuItem>
+            <asp:MenuItem Text="Siameza" Value="Siameza"></asp:MenuItem>
+        </Items>
+
+
+    </asp:Menu>
+
+         <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+
+        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1">
+            <Columns>
+                <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
+                <asp:BoundField DataField="nume" HeaderText="nume" SortExpression="nume" />
+            </Columns>
+        </asp:GridView>
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Id], [nume] FROM [Stapani]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Pisici] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Pisici] ([Id], [nume]) VALUES (@Id, @nume)" SelectCommand="SELECT [Id], [nume] FROM [Pisici]" UpdateCommand="UPDATE [Pisici] SET [nume] = @nume WHERE [Id] = @Id">
+            <DeleteParameters>
+                <asp:Parameter Name="Id" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="Id" Type="Int32" />
+                <asp:Parameter Name="nume" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="nume" Type="String" />
+                <asp:Parameter Name="Id" Type="Int32" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
+
+        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource2">
+            <Columns>
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
+                <asp:BoundField DataField="nume" HeaderText="nume" SortExpression="nume" />
+            </Columns>
+        </asp:GridView>
+    </form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<moviestore>
+  <movie ID="1" genre="Fantasy, Action" year="2015" duration="146">
+    <title>Star Wars: The Force Awakens</title>
+    <director>J.J. Abrams</director>
+    <actor>Harrison Ford</actor>
+    <actor>Mark Hamill</actor>
+    <actor>Carrie Fisher</actor>
+  </movie>
+  <movie ID="2" genre="Thriller" year="2015" duration="148">
+    <title>Spectre</title>
+    <director>Sam Mendes</director>
+    <actor>Daniel Craig</actor>
+  </movie>
+  <movie ID="3" genre="Adventure, Action" year="2016" duration="146">
+    <title>Indiana Jones : The search of the empire</title>
+    <director>J.J. Abrams</director>
+    <actor>Harrison Ford</actor>
+    <actor>Mark Hamill</actor>
+    <actor>Carrie Fisher</actor>
+  </movie>
+  <movie ID="4" genre="Family" year="2016" duration="148">
+    <title>Hotel Transilvania</title>
+    <director>Vampire</director>
+    <actor>Zombies</actor>
+  </movie>
+  <movie ID="5" genre="Fantasy, Action" year="2017" duration="146">
+    <title>Star Wars: The Force is Awakened</title>
+    <director>J.J. Abrams</director>
+    <actor>Harrison Ford</actor>
+    <actor>Mark Hamill</actor>
+    <actor>Carrie Fisher</actor>
+  </movie>
+  <movie ID="6" genre="Thriller" year="2017" duration="148">
+    <title>Orient Express Crime</title>
+    <director>Agatha Cristie</director>
+    <actor>Hercule Poirot</actor>
+  </movie>
+  <movie genre="1231" year="1231assda" duration="1231" ID="7">
+    <title>asdas</title>
+    <director />
+    <actor>asdasd</actor>
+  </movie>
+</moviestore>

@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Navbar.master.cs" Inherits="Navbar" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <%--<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">--%>
+    <link href=”~/Content/bootstrap.min.css” rel=”stylesheet”>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <!-- this onkeydown event disables the form submit on pressed enter key-->
+    <form id="formMain" runat="server" onkeydown="return (event.keyCode != 13)">
+        <asp:Panel ID="NavbarHeader" runat="server">
+
+            <asp:ImageButton ID="Logo" runat="server" Height="70px" 
+                ImageUrl="~\Images\logo.png" AlternateText="Markbook" PostBackUrl="~/Pages/Home.aspx" />
+            <asp:LoginView ID="LoginView" runat="server">
+                <AnonymousTemplate>
+                    <asp:Menu ID="MenuGuest" runat="server">
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/PagesGuest/SignUp.aspx" Text="Sign Up"></asp:MenuItem>
+                        </Items>
+                    </asp:Menu>    
+                </AnonymousTemplate>
+                <RoleGroups>
+                   <asp:RoleGroup Roles="members">
+                       <ContentTemplate>
+                           <asp:Menu ID="MenuMember" runat="server">
+                                <Items>
+                                    <asp:MenuItem NavigateUrl="~/PagesMember/AddBookmark.aspx" Text="Add new"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/PagesMember/Markpage.aspx"  Text="My profile"></asp:MenuItem>
+                                </Items>
+                            </asp:Menu>                            
+                       </ContentTemplate>
+                   </asp:RoleGroup>
+                    <asp:RoleGroup Roles="admins">
+                        <ContentTemplate>
+                            <asp:Menu ID="MenuAdmin" runat="server">
+                                <Items>
+                                    <asp:MenuItem NavigateUrl="~/PagesMember/AddBookmark.aspx" Text="Add new" />
+                                    <asp:MenuItem NavigateUrL="~/PagesMember/Markpage.aspx"  Text="My profile" />
+                                    <asp:MenuItem NavigateUrl="~/PagesAdmin/AddAdmin.aspx"
+                                        Text="Manage administrators"/>
+                                </Items>
+                            </asp:Menu>
+                        </ContentTemplate>
+                    </asp:RoleGroup>
+                </RoleGroups>
+            </asp:LoginView>
+            <asp:LoginStatus ID="LoginStatus" runat="server" 
+                LogoutAction="Redirect" LogoutPageUrl="~/Pages/Home.aspx" OnLoggingOut="LoginStatus_LoggingOut" />
+            <asp:Panel ID="Search" runat="server">
+                <asp:TextBox ID="SearchInput" runat="server" AutoCompleteType="Disabled" ValidationGroup="Search"  />
+                <asp:Button ID="SearchButton" runat="server" Text="Search" ValidationGroup="Search" OnClick="SearchButton_Click"/>
+            </asp:Panel>
+            <br />
+            <asp:Label ID="LoginNameLabel" runat="server">Hello,</asp:Label>
+            <br />
+            <asp:LoginName ID="LoginName" runat="server" />
+            <hr />
+        </asp:Panel>
+    <div> <!-- class="container body-content"--> 
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolderBody" runat="server">
+            
+        </asp:ContentPlaceHolder>
+        <hr />  
+        <footer>
+            <p>&copy; <%: DateTime.Now %> - My Asp Daw Project</p>
+        </footer>
+    </div>
+    </form>
+
+    <%--<script src=”~/Scripts/jquery-3.2.1.min.js”></script>
+    <script src=”~/Scripts/bootstrap.min.js”></script>--%>
+</body>
+</html>

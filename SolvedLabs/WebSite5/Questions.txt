@@ -1,0 +1,1 @@
+﻿Când dăm enter într-un texbox, se dă submit la primul buton de căutare. Cum putem evita asta ? 
